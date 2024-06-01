@@ -211,5 +211,25 @@ export function update() {
     updateDoor.call(this);
 }
 
-
+const config = {
+    type: Phaser.AUTO,
+    width: 1530,
+    height: 830,
+    pixelArt: true,
+    parent: 'game',
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 1000 },
+        debug: false
+      }
+    },
+    scene: {
+      preload: preload,
+      create: create,
+      update: update
+    }
+  };
+  
+  const game = new Phaser.Game(config);
 

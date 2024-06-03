@@ -101,7 +101,7 @@ export function preloadKing() {
         }
       }
       if (this.cursors.up.isDown && this.king.body.onFloor()) {
-        this.king.body.setVelocityY(-550);
+        this.king.body.setVelocityY(-500);
       }
     
       if (this.king.body.velocity.y < 0) {

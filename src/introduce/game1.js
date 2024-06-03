@@ -181,7 +181,7 @@ export function create() {
             this.iskingDead = true;
             // this.king.body.setVelocity(0, -300);
             king.anims.play('IN', true);
-
+            door.anims.play('doorOpen', true);
         }
     });
 

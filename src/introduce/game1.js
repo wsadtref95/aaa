@@ -5,6 +5,7 @@ import { preloadSpikedBall, createSpikedBall, updateSpikedBall } from './spikedB
 import { preloadSpikedBallc, createSpikedBallc, updateSpikedBallc } from './spikedBallc.js';
 import { preloadDoor, createDoor, updateDoor } from './door.js';
 import { Map1Scene } from '../scenes/game2.js';
+// import { Map2Scene } from '../scenes2/game3.js';
 
 
 class MainScene extends Phaser.Scene {
@@ -60,9 +61,7 @@ class MainScene extends Phaser.Scene {
         this.doors = this.physics.add.group();
         doorObjects.forEach(doorObject => {
             this.door = this.physics.add.sprite(doorObject.x, doorObject.y, 'doorOpenspritesheet');
-            // door.anims.play('doorOpen');
-            // this.door.body.allowGravity = false;
-            // this.doors.add(door);
+
             this.door.setDepth(1);
 
             this.anims.create({
@@ -180,22 +179,20 @@ class MainScene extends Phaser.Scene {
             if (!this.iskingDead && !door.isDead) {
                 this.iskingDead = true;
 
-                // 1. 播放 doorOpen 动画
+
                 door.anims.play('doorOpen', true);
 
-                // 2. 等 doorOpen 动画完成后播放 king 的 IN 动画
+
                 door.on('animationcomplete', () => {
                     king.anims.play('In', true);
 
-                    // 3. 等 IN 动画完成后让 king 消失
                     king.on('animationcomplete', () => {
                         king.setVisible(false);
 
-                        // 4. 延迟一秒后播放 doorClose 动画
+
                         this.time.delayedCall(1000, () => {
                             door.anims.play('doorClose', true);
 
-                            // 5. 等 doorClose 动画完成后切换到新的场景
                             door.on('animationcomplete', () => {
                                 this.scene.start('Map1Scene');
                             }, this);
@@ -238,7 +235,7 @@ class MainScene extends Phaser.Scene {
 
 
         this.cursors = this.input.keyboard.createCursorKeys();
-        this.cameras.main.setZoom(1.5);
+        this.cameras.main.setZoom(2);
         this.cameras.main.startFollow(this.king);
 
 

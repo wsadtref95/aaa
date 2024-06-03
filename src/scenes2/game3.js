@@ -4,14 +4,13 @@ import { preloadPig, createPig, updatePig } from './pig.js';
 import { preloadSpikedBall, createSpikedBall, updateSpikedBall } from './spikedBall.js';
 import { preloadSpikedBallc, createSpikedBallc, updateSpikedBallc } from './spikedBallc.js';
 import { preloadDoor, createDoor, updateDoor } from './door.js';
-// import { Map1Scene } from '../scenes/game2.js';
+
 
 
 export class Map2Scene extends Phaser.Scene {
     constructor() {
         super({ key: 'Map2Scene' });
     }
-
 
     preload() {
         preloadKing.call(this);
@@ -23,6 +22,8 @@ export class Map2Scene extends Phaser.Scene {
 
         this.load.tilemapTiledJSON('map2', 'map/map2.json');
         this.load.image('tiles', 'map/Terrain (32x32).png');
+
+
 
     }
 
@@ -176,34 +177,32 @@ export class Map2Scene extends Phaser.Scene {
             }
         });
 
-        // this.physics.add.overlap(this.king, this.door, (king, door) => {
-        //     if (!this.iskingDead && !door.isDead) {
-        //         this.iskingDead = true;
+        this.physics.add.overlap(this.king, this.door, (king, door) => {
+            if (!this.iskingDead && !door.isDead) {
+                this.iskingDead = true;
 
-        //         // 1. 播放 doorOpen 动画
-        //         door.anims.play('doorOpen', true);
 
-        //         // 2. 等 doorOpen 动画完成后播放 king 的 IN 动画
-        //         door.on('animationcomplete', () => {
-        //             king.anims.play('In', true);
+                door.anims.play('doorOpen', true);
 
-        //             // 3. 等 IN 动画完成后让 king 消失
-        //             king.on('animationcomplete', () => {
-        //                 king.setVisible(false);
 
-        //                 // 4. 延迟一秒后播放 doorClose 动画
-        //                 this.time.delayedCall(1000, () => {
-        //                     door.anims.play('doorClose', true);
+                door.on('animationcomplete', () => {
+                    king.anims.play('In', true);
 
-        //                     // 5. 等 doorClose 动画完成后切换到新的场景
-        //                     door.on('animationcomplete', () => {
-        //                         this.scene.start('Map1Scene');
-        //                     }, this);
-        //                 }, [], this);
-        //             }, this);
-        //         }, this);
-        //     }
-        // });
+                    king.on('animationcomplete', () => {
+                        king.setVisible(false);
+
+        
+                        this.time.delayedCall(1000, () => {
+                            door.anims.play('doorClose', true);
+
+                            door.on('animationcomplete', () => {
+                                this.scene.start('Map2Scene');
+                            }, this);
+                        }, [], this);
+                    }, this);
+                }, this);
+            }
+        });
 
 
 
@@ -238,7 +237,7 @@ export class Map2Scene extends Phaser.Scene {
 
 
         this.cursors = this.input.keyboard.createCursorKeys();
-        this.cameras.main.setZoom(1.5);
+        this.cameras.main.setZoom(2);
         this.cameras.main.startFollow(this.king);
 
 

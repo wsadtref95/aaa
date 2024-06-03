@@ -184,10 +184,10 @@
             top: 60%;
         }
 
-        #king2 {
+        #gp1 {
             position: absolute;
-            right: 20%;
-            top: 60%;
+            right: 24%;
+            top: 69%;
         }
 
         #king3 {
@@ -514,6 +514,16 @@
             display: inline-block;
             line-height: 1em;
         }
+
+        /* ==================================== */
+
+        #gp1 {
+            position: absolute; 
+            top: 69%; 
+            right: 24%; /* 初始位置 */
+            transition: all 0.6s ease; /* 添加過渡效果 */
+        }
+
     </style>
 </head>
 
@@ -548,7 +558,7 @@
 
     <img id="king1" class="ld ld-hit " src="./assets/attack1.png" style="animation-duration:2.0s;" />
 
-    <img id="king2" class="ld ld-move-fade-ltr " src="./assets/attack3.png" style="animation-duration:2.0s;" />
+    <img id="gp1" onclick="apple()" class="ld ld-swing" src="./assets/group1.png" style="animation-duration:2.0s;" />
 
     <img id="king3" class="ld ld-bounce " src="./assets/Jump1.png" style="animation-duration:2.0s;" />
 
@@ -575,7 +585,7 @@
                 </div>
             </div>
         </div>
-        <button id="king5" class="btn" data-bs-toggle="modal" data-bs-target="#apple">
+        <button id="king5" class="btn ld ld-fade" data-bs-toggle="modal" data-bs-target="#apple">
             <img src="./assets/IN.png" alt="">
         </button>
     </div>
@@ -589,8 +599,8 @@
 
     <!-- <img id="pig11"   class="ld ld-bounce " src="./assets/jumppig1.png" style="animation-duration:2.0s" /> -->
     <img id="pig12" class="ld ld-tick-alt " src="./assets/pigattack.png" style="animation-duration:2.0s" />
-    <img id="pig13" class="ld ld-fade " src="./assets/deadpig1.png" style="animation-duration:2.0s" />
-    <img id="pig14" class="ld ld-fade " src="./assets/deadpig1.png" style="animation-duration:2.0s" />
+    <!-- <img id="pig13" class="ld ld-fade " src="./assets/deadpig1.png" style="animation-duration:2.0s" /> -->
+    <!-- <img id="pig14" class="ld ld-fade " src="./assets/deadpig1.png" style="animation-duration:2.0s" /> -->
 
     <!-- ==============================saw======================================= -->
 
@@ -696,6 +706,29 @@
         document.getElementById('confirmExit').addEventListener('click', function () {
             window.close();
         });
+
+        window.onload = function() {
+           
+            let img = document.getElementById('king5');
+            
+            
+            img.style.animationDuration = '6.0s'; 
+        }
+
+        function apple() {
+            let img = document.getElementById('gp1');
+            if (img.src.indexOf("group1") >= 0) {
+                img.src = "./assets/group3.png";
+                // 调整图片位置
+                img.style.top = "60%"; // 新的位置
+                img.style.left = "60%"; // 新的位置
+            } else {
+                img.src = "./assets/group1.png";
+                // 恢复初始位置
+                img.style.top = "60%";
+                img.style.left = "70%";
+            }
+        }
     </script>
 
     <!-- ================================================================== -->

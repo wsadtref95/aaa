@@ -15,7 +15,7 @@ export function preload() {
     preloadSpikedBallc.call(this);
     preloadDoor.call(this);
 
-    this.load.tilemapTiledJSON('map', 'map/map0.json');
+    this.load.tilemapTiledJSON('map', 'map/map1.json');
     this.load.image('tiles', 'map/Terrain (32x32).png');
     this.load.spritesheet('spikedBallc', './assets/On (38x38)red.png', { frameWidth: 38, frameHeight: 38 });
 

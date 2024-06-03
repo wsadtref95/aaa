@@ -206,6 +206,8 @@
             top: 90%;
         }
 
+
+
         /* ================================================ */
 
         #door {
@@ -269,6 +271,12 @@
             top: 25%;
         }
 
+        #Decoration7 {
+            position: absolute;
+            right: 12%;
+            top: 25%;
+        }
+
         #Decoration4 {
             position: absolute;
             right: 15%;
@@ -284,6 +292,24 @@
         #Decoration6 {
             position: absolute;
             right: 21%;
+            top: 25%;
+        }
+
+        #Decoration8 {
+            position: absolute;
+            right: 24%;
+            top: 25%;
+        }
+
+        #Decoration9 {
+            position: absolute;
+            right: 79%;
+            top: 25%;
+        }
+
+        #Decoration10 {
+            position: absolute;
+            right: 91%;
             top: 25%;
         }
 
@@ -320,6 +346,17 @@
             color: rgb(115, 115, 234);
         }
 
+        #chest {
+            visibility: hidden;
+            position: absolute;
+            top: 87%;
+            right: 92.5%;
+        }
+
+        .demo3:hover>#chest {
+            visibility: visible;
+        }
+
         #IG {
             position: absolute;
             right: 92%;
@@ -332,6 +369,18 @@
             color: rgb(248, 91, 88);
         }
 
+        #box {
+            visibility: hidden;
+            position: absolute;
+            top:88.5%;
+            right: 91.5%;
+        }
+
+        .demo2:hover>#box {
+            visibility: visible;
+        }
+
+
         #twitter {
             position: absolute;
             right: 88%;
@@ -342,6 +391,17 @@
 
         #twitter:hover {
             color: rgb(101, 186, 255);
+        }
+
+        #candle {
+            visibility: hidden;
+            position: absolute;
+            right: 88.2%;
+            top: 87%
+        }
+
+        .demo1:hover>#candle {
+            visibility: visible;
         }
 
         #youtube {
@@ -356,16 +416,16 @@
             color: red;
         }
 
-        #threads {
+
+        #pigBomb {
+            visibility: hidden;
             position: absolute;
-            right: 81%;
-            top: 93%;
-            font-size: 35%;
-            color: white;
+            right: 83.8%;
+            top: 88%;
         }
 
-        #threads:hover {
-            color: black;
+        .demo:hover>#pigBomb {
+            visibility: visible;
         }
 
         /* ================================================= */
@@ -426,7 +486,19 @@
             --n: 4;
         }
 
+        /* ==================================== */
+        #exit {
+            position: absolute;
+            top: 71%;
+            right: 3.5%;
+        }
+
         /* ======================================== */
+        #arrow {
+            position: absolute;
+            top: 78%;
+            right: 6.5%;
+        }
     </style>
 </head>
 
@@ -435,7 +507,7 @@
     <img id="king" class="ld ld-wander-h " src="./assets/attack1.png" style="animation-duration:2.0s;" />
     <!-- <a style="position: absolute; top: 55%; left: 45%;" class=" btn btn-lg" href="./index.html">Start
             Game</a> -->
-    <a style="position: absolute; top: 55%; left: 45%;"     href="./index.html" class="btnc">
+    <a style="position: absolute; top: 55%; left: 45%;" href="./index.html" class="btnc">
         Start Game!
         <span></span><span></span><span></span><span></span>
     </a>
@@ -467,7 +539,8 @@
 
     <img id="king4" class="ld ld-damage " src="./assets/Dead1png.png" style="animation-duration:2.0s;" />
 
-    <!-- <img id="king5" class="ld ld-fade" data-bs-toggle="modal" data-bs-target="#apple" src="./assets/IN.png" style="animation-duration:2.0s;" /> -->
+
+
     <!-- ======================================================================= -->
     <div class="container">
         <div id="apple" class="modal" tabindex="-1">
@@ -512,8 +585,9 @@
     <img  id="saw3"  class="ld ld-cycle  " src="./assets/Off1.png" style="animation-duration:2.0s" />
     <img  id="saw4"  class="ld ld-cycle  " src="./assets/Off1.png" style="animation-duration:2.0s" />
     <img  id="saw5"  class="ld ld-cycle  " src="./assets/Off1.png" style="animation-duration:2.0s" /> -->
-
-
+    <!-- ======================================================================================================= -->
+    <img id="exit" class="ld ld-static  " src="./assets/exit.png" style="animation-duration:2.0s" />
+    <img id="arrow" class="ld ld-shake-v  " src="./assets/arrow.png" style="animation-duration:2.0s" />
     <!--========================================diamond========================================================  -->
     <!-- <img id="diamond"  class="ld ld-rubber-h  " src="./assets/Big Diamond Idle (18x14).png" style="animation-duration:2.0s" />
     <img id="diamond1"  class="ld ld-rubber-h  " src="./assets/Big Diamond Idle (18x14).png" style="animation-duration:2.0s" />
@@ -533,8 +607,15 @@
     <img id="Decoration3" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
     <img id="Decoration4" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
     <img id="Decoration5" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
-    <img id="Decoration6" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
 
+
+    <img id="Decoration4" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration5" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration6" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration7" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration8" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration9" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
+    <img id="Decoration10" class="ld ld-jingle  " src="./assets/Decorations1.png" style="animation-duration:2.0s" />
     <!-- ============================================================================================================= -->
     <img id="Terrain1" class="ld ld-static  " src="./assets/Terrain2 (32x32).png" style="animation-duration:2.0s" />
     <img id="Terrain2" class="ld ld-static  " src="./assets/Terrain2 (32x32).png" style="animation-duration:2.0s" />
@@ -545,19 +626,38 @@
     <img id="heart1" class="ld ld-rubber-h  " src="./assets/Big Heart Idle (18x14).png"
         style="animation-duration:2.0s" />
 
+    <!-- ================================================================================ -->
+    <!-- ========================================================================================================= -->
+    
+    
+    <figure class="demo3">   
+        <img id="chest" class="ld ld-beat  " src="./assets/Chest.png" style="animation-duration:2.0s" />
+        <a id="facebook" href="#"><i class="bi bi-facebook"></i></a>
+    </figure>
 
-    <a id="facebook" href="#"><i class="bi bi-facebook"></i></a>
 
-    <a id="IG" href="#"><i class="bi bi-instagram"></i></a>
+    <figure class="demo2">
+        <img id="box" class="ld ld-shiver  " src="./assets/box.png" style="animation-duration:2.0s" />
+        <a id="IG" href="#"><i class="bi bi-instagram"></i></a>
+    </figure>
 
-    <a id="twitter" href="#"><i class="bi bi-twitter"></i></a>
 
-    <a id="youtube" href="#"><i class="bi bi-youtube"></i></a>
+    <figure class="demo1">
+        <img id="candle" class="ld ld-wander-h  " src="./assets/candle.png" style="animation-duration:2.0s" />
+        <a id="twitter" href="#"><i class="bi bi-twitter"></i></a>
+    </figure>
+
+    <figure class="demo">
+        <img id="pigBomb" class="ld ld-wander-v " src="./assets/pigBomb.png" style="animation-duration:2.0s;" />
+        <a id="youtube" href="#"><i class="bi bi-youtube"></i></a>
+    </figure>
+
+
 
 
 
     <script>
-        document.getElementById('confirmExit').addEventListener('click', function() {
+        document.getElementById('confirmExit').addEventListener('click', function () {
             window.close();
         });
     </script>

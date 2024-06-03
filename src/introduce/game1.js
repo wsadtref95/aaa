@@ -15,7 +15,7 @@ export function preload() {
     preloadSpikedBallc.call(this);
     preloadDoor.call(this);
 
-    this.load.tilemapTiledJSON('map', 'map/map2.json');
+    this.load.tilemapTiledJSON('map', 'map/map0.json');
     this.load.image('tiles', 'map/Terrain (32x32).png');
 
 }
@@ -33,6 +33,7 @@ export function create() {
     this.isDiamondCollected = false;
     this.iskingAttack = false;
     this.iskingDead = false;
+    this.isdoorDead = false;
 
     const pointObjects = map.getObjectLayer('point').objects;
 
@@ -52,9 +53,11 @@ export function create() {
     this.doors = this.physics.add.group();
     doorObjects.forEach(doorObject => {
         this.door = this.physics.add.sprite(doorObject.x, doorObject.y, 'doorOpenspritesheet');
+        this.door.body.setSize(16,16);
+        // door.anims.play('doorOpen');
         // this.door.body.allowGravity = false;
         // this.doors.add(door);
-    });
+    
     
     this.anims.create({
         key: 'doorOpen',
@@ -65,7 +68,7 @@ export function create() {
 
     // door.anims.play('doorOpen', true);
 
-    
+});  
     this.pigs = this.physics.add.group();
     pigObjects.forEach(pigObject => {
         const pig = this.physics.add.sprite(pigObject.x, pigObject.y, 'pigspritesheet');
@@ -162,6 +165,23 @@ export function create() {
             diamond.on('animationcomplete', () => {
                 diamond.destroy();
             });
+        }
+    });
+
+    // this.physics.add.overlap(this.king, this.doors, (king, door) => {
+    //     if (!this.iskingDead && !door.isDead) {
+    //         door.isDead = true;
+    //         console.log("HIT pig!");
+    //         door.anims.play('doorOpen', true);
+    //     }
+    // });
+
+    this.physics.add.overlap(this.king, this.door, (king, door) => {
+        if (!this.iskingDead && !door.isDead) {
+            this.iskingDead = true;
+            // this.king.body.setVelocity(0, -300);
+            king.anims.play('IN', true);
+
         }
     });
 

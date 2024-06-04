@@ -20,7 +20,7 @@ export class Map1Scene extends Phaser.Scene {
         preloadSpikedBallc.call(this);
         preloadDoor.call(this);
 
-        this.load.tilemapTiledJSON('map1', 'map/map1.json');
+        this.load.tilemapTiledJSON('map1', 'map/map2.json');
         this.load.image('tiles', 'map/Terrain (32x32).png');
 
 

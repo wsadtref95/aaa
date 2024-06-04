@@ -59,7 +59,7 @@
 
         #diamond5 {
             position: absolute;
-            right: 40%;
+            right: 40.2%;
             top: 30%;
         }
 
@@ -194,6 +194,7 @@
             position: absolute;
             right: 40%;
             top: 35%;
+            transition: all 0.6s ease;
         }
 
         #king4 {
@@ -318,7 +319,7 @@
         /* ================================Terrain======================================= */
         #Terrain1 {
             position: absolute;
-            right: 39%;
+            right: 38.5%;
             top: 40%;
         }
 
@@ -491,15 +492,15 @@
         /* ==================================== */
         #exit {
             position: absolute;
-            top: 70%;
-            right: 6.2%;
+            top: 75%;
+            right: 7.1%;
         }
 
         /* ======================================== */
         #arrow {
             position: absolute;
-            top: 79%;
-            right: 7%;
+            top: 82%;
+            right: 7.2%;
         }
 
         /* ================================================ */
@@ -520,8 +521,8 @@
         #gp1 {
             position: absolute; 
             top: 69%; 
-            right: 24%; /* 初始位置 */
-            transition: all 0.6s ease; /* 添加過渡效果 */
+            right: 24%; 
+            transition: all 0.6s ease;
         }
 
     </style>
@@ -560,7 +561,7 @@
 
     <img id="gp1" onclick="apple()" class="ld ld-swing" src="./assets/group1.png" style="animation-duration:2.0s;" />
 
-    <img id="king3" class="ld ld-bounce " src="./assets/Jump1.png" style="animation-duration:2.0s;" />
+    <img id="king3" onclick="cat()"    class="ld ld-bounce " src="./assets/Jump1.png" style="animation-duration:2.0s;" />
 
     <img id="king4" class="ld ld-damage " src="./assets/Dead1png.png" style="animation-duration:2.0s;" />
 
@@ -719,14 +720,29 @@
             let img = document.getElementById('gp1');
             if (img.src.indexOf("group1") >= 0) {
                 img.src = "./assets/group3.png";
-                // 调整图片位置
-                img.style.top = "60%"; // 新的位置
-                img.style.left = "60%"; // 新的位置
+       
+                img.style.top = "60%";
+                img.style.left = "60%";
             } else {
                 img.src = "./assets/group1.png";
-                // 恢复初始位置
+ 
                 img.style.top = "60%";
                 img.style.left = "70%";
+            }
+        }
+
+        function cat() {
+            let img = document.getElementById('king3');
+            if (img.src.indexOf("Jump1") >= 0) {
+                img.src = "./assets/Jump2.png";
+       
+                img.style.top = "35%";
+                img.style.left = "56.7%";
+            } else {
+                img.src = "./assets/Jump1.png";
+ 
+                img.style.top = "35%";
+                img.style.left = "67%";
             }
         }
     </script>
